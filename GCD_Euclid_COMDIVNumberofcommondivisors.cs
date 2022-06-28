@@ -29,22 +29,29 @@ class Solution
 int main()
 {
     Solution objectS;
-    long ans = objectS.GcdCalculation(100000, 100000);
-    long cnt = 0;
-    for (long i = 1; i * i <= ans; i++)
+    long a, b, n;
+    cin >> n;
+    for (int g = 0; g < n; g++)
     {
-        if (ans % i == 0)
+        cin >> a >> b;
+        long ans = objectS.GcdCalculation(a, b);
+        long cnt = 0;
+        for (long i = 1; i * i <= ans; i++)
         {
-            if (ans / i == i)
+            if (ans % i == 0)
             {
-                cnt++;
-            }
-            else
-            {
-                cnt += 2;
+                if (ans / i == i)
+                {
+                    cnt++;
+                }
+                else
+                {
+                    cnt += 2;
+                }
             }
         }
+        cout << cnt << "\n";
+
     }
-    cout << "Maximum common divisor is : " << cnt;
     return 0;
 }
